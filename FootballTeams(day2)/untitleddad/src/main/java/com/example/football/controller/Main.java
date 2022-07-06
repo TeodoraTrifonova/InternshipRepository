@@ -47,8 +47,8 @@ public class Main {
             File file = new File(filename);
             Scanner myReader = new Scanner(file);
             while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                System.out.println(data);
+                Teams team = new Teams(myReader.next(),myReader.next(),myReader.next(),myReader.next());
+                System.out.println(team);
             }
             myReader.close();
         } catch (FileNotFoundException e) {
