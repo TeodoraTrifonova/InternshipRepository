@@ -9,3 +9,7 @@ bazov interface shape + nqkolko klasa koito go extend-nat 3 clasa
 shape da ima method area koito printira liceto na shaput 
 
 
+
+2 nishki v java + semafor
+
+
