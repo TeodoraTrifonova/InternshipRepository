@@ -27,6 +27,7 @@ public class LocationServiceImpl implements LocationInterface {
 
     @Override
     public Coordinate fingCoordinate(String label) {
+        Coordinate coordinate;
         if(!location.containsKey(label))
         {
            return location.get(label);

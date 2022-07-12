@@ -1,5 +1,6 @@
 package com.example.den4springbootapp.controller;
 
+import com.example.den4springbootapp.domain.models.Coordinate;
 import com.example.den4springbootapp.domain.services.interfaces.LocationInterface;
 import com.example.den4springbootapp.requestMapper.LocationRequest;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +18,7 @@ public class LocationController {
 
     @PostMapping("/location")
     public void addLocation(@RequestBody LocationRequest locationRequest)
-    {
-        
+    { Coordinate coordinate = new Coordinate(Double.parseDouble(locationRequest.getLon()),Double.parseDouble(locationRequest.getLat()));
+        locationInterface.addLocation(locationRequest.getLabel(),coordinate);
     }
 }
