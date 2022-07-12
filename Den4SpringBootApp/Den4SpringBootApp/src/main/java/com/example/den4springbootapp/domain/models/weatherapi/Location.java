@@ -1,14 +1,22 @@
 package com.example.den4springbootapp.domain.models.weatherapi;
 
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
+@Builder
+@Setter(AccessLevel.PRIVATE)
+@Getter
 public class Location{
-    public String name;
-    public String region;
-    public String country;
-    public double lat;
-    public double lon;
-    public String tz_id;
-    public int localtime_epoch;
-    public String localtime;
+    private String name;
+    private String region;
+    private String country;
+    private double lat;
+    private double lon;
+    private String tz_id;
+    private int localtime_epoch;
+    private String localtime;
 
 
 }

@@ -2,67 +2,68 @@ package com.example.den4springbootapp.domain.models;
 
 import com.example.den4springbootapp.domain.models.weatherapi.Condition;
 import com.example.den4springbootapp.domain.models.weatherapi.Current;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Objects;
 
+@Builder
+@Getter
+@Setter(AccessLevel.PRIVATE)
 public class Weather {
-    private String forecast;
+    private String regiont;
+    private String temp;
+    private String condition;
+/*
     private Coordinate coordinates;
     private Condition condition;
     private Current current;
+*/
 
-    public Weather(Coordinate coordinates, Condition condition, Current current) {
-        this.coordinates = coordinates;
+
+    public Weather(String regiont, String temp, String condition) {
+        this.regiont = regiont;
+        this.temp = temp;
         this.condition = condition;
-        this.current = current;
     }
 
-    public Weather(Coordinate coordinates) {
-        this.coordinates = coordinates;
+    public String getRegiont() {
+        return regiont;
     }
 
-    public Condition getCondition() {
+    public void setRegiont(String regiont) {
+        this.regiont = regiont;
+    }
+
+    public String getTemp() {
+        return temp;
+    }
+
+    public void setTemp(String temp) {
+        this.temp = temp;
+    }
+
+
+    public String getCondition() {
         return condition;
     }
 
-    public void setCondition(Condition condition) {
+    public void setCondition(String condition) {
         this.condition = condition;
-    }
-
-    public Current getCurrent() {
-        return current;
-    }
-
-    public void setCurrent(Current current) {
-        this.current = current;
-    }
-
-    public String getForecast() {
-        return forecast;
-    }
-
-    public void setForecast(String forecast) {
-        this.forecast = forecast;
-    }
-
-    public Coordinate getCoordinates() {
-        return coordinates;
-    }
-
-    public void setCoordinates(Coordinate coordinates) {
-        this.coordinates = coordinates;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Weather that = (Weather) o;
-        return Objects.equals(forecast, that.forecast) && Objects.equals(coordinates, that.coordinates);
+        Weather weather = (Weather) o;
+        return Objects.equals(regiont, weather.regiont) && Objects.equals(temp, weather.temp) && Objects.equals(condition, weather.condition);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(forecast, coordinates);
+        return Objects.hash(regiont, temp, condition);
     }
 }

@@ -1,25 +1,27 @@
 package com.example.den4springbootapp.domain.services;
 
 import com.example.den4springbootapp.domain.models.Coordinate;
-import com.example.den4springbootapp.domain.models.weatherapi.OpenWeatherAPIRequest;
 import com.example.den4springbootapp.domain.models.Weather;
+import com.example.den4springbootapp.domain.models.weatherapi.Condition;
+import com.example.den4springbootapp.domain.models.weatherapi.OpenWeatherAPIRequest;
+import com.example.den4springbootapp.domain.services.interfaces.RestTemplateProvider;
+import com.example.den4springbootapp.domain.services.interfaces.WeatherService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class TestWeatherService { //vryshta prognozata za vremeto pri zadadeni koordinati
-    public Weather generateForecast(Coordinate coordinates) {
+public class TestWeatherService  implements WeatherService { //vryshta prognozata za vremeto pri zadadeni koordinati
 
-        final String key = "c782585acdc84252b3790106220807";
+    public TestWeatherService() {
+        System.out.println("TestWeatherService initialized");
+    }
 
-        final String uri = "http://api.weatherapi.com/v1/current.json?key=" + key + "&q=" + coordinates.getLat()
-                + "," + coordinates.getLon();
 
-        RestTemplate restTemplate = new RestTemplate();
-        OpenWeatherAPIRequest owar = restTemplate.getForObject(uri, OpenWeatherAPIRequest.class);
-        Weather weather = new Weather(coordinates, owar.current.condition, owar.current);
-        weather.setForecast(owar.location.region);
+    @Override
+    public Weather getForecast(Coordinate coordinate) {
+        Weather weather = new Weather("Varna","28.4","Sunny");
         return weather;
+
     }
 }
 //Pravim interface weatherService

@@ -1,7 +1,15 @@
 package com.example.den4springbootapp.domain.models.weatherapi;
 
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
+@Builder
+@Setter(AccessLevel.PRIVATE)
+@Getter
 public class Condition{
-    public String text;
-    public String icon;
-    public int code;
+    private String text;
+    private String icon;
+    private int code;
 }

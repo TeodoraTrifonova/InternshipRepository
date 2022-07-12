@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class WeatherMapper{
     public String getWeather(Weather weather){
-        return "Weather in "+weather.getForecast()+ ":\n Temperature in Celsius:"+
-                weather.getCurrent().temp_c+"\n Condition:"+
-                weather.getCondition().text+"\n";
+        return "Weather in "+weather.getRegiont()+ ":\n Temperature in Celsius:"+
+                weather.getTemp()+"\n Condition:"+
+                weather.getCondition()+"\n";
     }
 }
