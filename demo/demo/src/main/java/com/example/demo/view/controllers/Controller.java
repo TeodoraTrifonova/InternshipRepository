@@ -16,6 +16,7 @@ public class Controller {
 
     @GetMapping("/")
     public void get() {
+        System.out.println("---------------------------\n\n\n");
         infoService.firstTask();
         System.out.println("---------------------------\n\n\n");
         infoService.secondTask();
@@ -35,4 +36,25 @@ public class Controller {
         infoService.ninthTask();
         System.out.println("---------------------------\n\n\n");
     }
+    /*
+                1.Razpechataite vsichki futbolisto ot psj sortirani po nomer ;
+            2.Razpechataite vsichki futbolisti 1 po otbor , polse nomer
+            3 po ispanskata liga;
+
+            v domaina se sluchva 1 metod za vsichkiute
+
+            4. razpechataite vsichki ligi kato na vsqka liga vklyuchete byudjeta ( liga - byudjet)
+            5. napravete string koito sudurja slednoto:
+            in :
+
+            TEAM:Barca Player1, Player2, Player /ENDTEAM TEAM:Real.....
+
+            6. razpechatai vsichki futbolisti , sortirani i grupirani po durjava ( league->country)
+
+            7. Da se vurne nai-bogatata liga;
+
+            8. da razpechatate vsichkite ligi vklyuchitelno i tehniq average byudjet i sortirame po tozi average byudjet  (ot nai bogata kym nai bedna)
+
+            9. razpechataite spisuk na futbolistite s povtarqshti se nomera
+     */
 }
