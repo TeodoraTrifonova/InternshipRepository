@@ -13,11 +13,12 @@ import java.util.List;
 
 @RestController
 public class HomeController {
-    private final WeatherExecutor weatherExecutor;
+  /* private final WeatherExecutor weatherExecutor;
 
-    public HomeController(WeatherExecutor weatherExecutor) {
+  public HomeController(WeatherExecutor weatherExecutor) {
         this.weatherExecutor = weatherExecutor;
     }
+
 
     @PostMapping("/getWeather")
     public WeatherResponse getWeather(@RequestBody WeatherRequest weatherRequest) throws CustomException {
@@ -27,5 +28,5 @@ public class HomeController {
     public List<WeatherResponse> getAll(){
         return weatherExecutor.executeAll();
     }
-
+*/
 }

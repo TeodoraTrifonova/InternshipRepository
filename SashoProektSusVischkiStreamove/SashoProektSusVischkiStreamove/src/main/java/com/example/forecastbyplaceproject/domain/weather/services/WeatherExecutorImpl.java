@@ -13,7 +13,8 @@ import java.util.stream.Stream;
 
 @Service
 @Primary
-public class WeatherExecutorImpl implements WeatherExecutor {
+public class WeatherExecutorImpl /*implements WeatherExecutor */{
+   /*
     private final PlaceService placeService;
 
     public WeatherExecutorImpl(PlaceService placeService) {
@@ -45,4 +46,5 @@ public class WeatherExecutorImpl implements WeatherExecutor {
                         .build())
                 .collect(Collectors.toList());
     }
+    */
 }

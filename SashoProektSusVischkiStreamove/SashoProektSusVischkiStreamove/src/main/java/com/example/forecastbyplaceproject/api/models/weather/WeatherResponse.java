@@ -1,8 +1,7 @@
 package com.example.forecastbyplaceproject.api.models.weather;
 
-import com.example.forecastbyplaceproject.api.base.OperationResult;
+import com.example.forecastbyplaceproject.data.repositories.base.OperationResult;
 import lombok.*;
-import org.springframework.stereotype.Service;
 
 @Getter
 @Setter
@@ -15,4 +14,5 @@ public class WeatherResponse implements OperationResult {
     private String typeName;
     private String countryName;
     private String temp;
+    private String humidity;
 }

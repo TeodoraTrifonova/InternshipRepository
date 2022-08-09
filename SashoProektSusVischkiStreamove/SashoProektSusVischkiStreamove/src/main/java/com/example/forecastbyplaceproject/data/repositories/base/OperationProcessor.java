@@ -1,4 +1,4 @@
-package com.example.forecastbyplaceproject.api.base;
+package com.example.forecastbyplaceproject.data.repositories.base;
 
 import io.vavr.control.Either;
 
